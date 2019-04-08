@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/commentHeadingRelLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/postThumbnail"
+                android:background="@drawable/reddit1"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/postThumbnail"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/postTitle"
+                    android:layout_marginTop="3dp"
+                    android:text="comment"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:textSize="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/postAuthor"
+                    android:layout_marginTop="3dp"
+                    android:text="Author"
+                    android:gravity="center"
+                    android:layout_below="@+id/postTitle"/>
+
+                <TextView
+                    android:textSize="10sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/postUpdated"
+                    android:layout_marginTop="3dp"
+                    android:text="Last Updated"
+                    android:gravity="center"
+                    android:layout_below="@+id/postAuthor"/>
+
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+
+            android:id="@+id/recycler_view"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:layout_below="@id/commentHeadingRelLayout"/>
+
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
