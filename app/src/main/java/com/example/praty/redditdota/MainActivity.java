@@ -60,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
                     extractXML1.startExtract();
                     List<String> postContent=extractXML1.getHrefs();
                    // Log.d(TAG, "onResponse: Post link:"+ postContent.get(postContent.size()-1));
-                    int size=postContent.size();
-                    for(int j=0;j<size;j++){
+                    int size1=postContent.size();
+                    for(int j=0;j<size1;j++){
 
                         //Log.d(TAG, "onResponse: href: "+ postContent.get(j));
                         if(postContent.get(j).endsWith(".jpg") || postContent.get(j).endsWith(".jpeg")|| postContent.get(j).endsWith(".png")){
@@ -69,14 +69,26 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
+                    if(postContent.size()==size1)
                     posts.add(new Post(
                             entries.get(i).getAuthor().getName(),
                             entries.get(i).getUpdated(),
                             entries.get(i).getTitle(),
-                            postContent.get(postContent.size()-2),
+                            postContent.get(postContent.size()-1),
                             postContent.get(postContent.size()-1)
 
                     ));
+                    else{
+                        posts.add(new Post(
+                                entries.get(i).getAuthor().getName(),
+                                entries.get(i).getUpdated(),
+                                entries.get(i).getTitle(),
+                                postContent.get(postContent.size()-2),
+                                postContent.get(postContent.size()-1)
+                        ));
+
+
+                    }
                 }
 
 //                for(int j=0;j<posts.size();j++){
