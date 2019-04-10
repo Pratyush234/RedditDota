@@ -10,6 +10,7 @@
     android:paddingLeft="8dp"
     android:paddingRight="8dp"
     android:paddingTop="8dp"
+    android:background="#000"
     >
 
 
@@ -20,7 +21,8 @@
         app:cardElevation="10dp"
         app:contentPaddingRight="10dp"
         app:contentPaddingLeft="10dp"
-        app:cardMaxElevation="15dp">
+        app:cardMaxElevation="15dp"
+        android:background="#000">
 
        <LinearLayout
            android:layout_width="match_parent"
@@ -32,7 +34,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="Author"
-               android:textSize="15sp"
+               android:textSize="18sp"
                android:textColor="#000"
                android:id="@+id/cardAuthor"
                android:layout_marginTop="3dp"
@@ -41,7 +43,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="Title"
-               android:textSize="12sp"
+               android:textSize="8sp"
                android:textColor="#000"
                android:id="@+id/cardTitle"
                android:layout_marginTop="3dp"
@@ -49,7 +51,7 @@
            <TextView
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Author"
+               android:text="Updated"
                android:textSize="12sp"
                android:textColor="#000"
                android:id="@+id/cardUpdated"
@@ -57,11 +59,11 @@
                />
            <ImageView
                android:layout_width="match_parent"
-               android:layout_height="120dp"
+               android:layout_height="250dp"
                android:id="@+id/cardImage"
                android:layout_marginTop="5dp"
                android:scaleType="fitXY"
-               android:background="@drawable/reddit"
+               android:background="@drawable/reddit3"
 
                />
 

@@ -31,7 +31,7 @@
                     android:gravity="center_vertical"
                     android:text="comment"
                     android:layout_marginTop="3dp"
-                    android:textStyle="bold"/>
+                    android:textColor="#000"/>
 
                 <TextView
                     android:layout_width="wrap_content"

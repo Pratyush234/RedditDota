@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,7 +59,6 @@ public class CommentsActivity extends AppCompatActivity {
 
 
 
-
         Retrofit retrofit= new Retrofit.Builder()
                 .baseUrl(baseURL)
                 .addConverterFactory(SimpleXmlConverterFactory.create())
@@ -66,7 +66,7 @@ public class CommentsActivity extends AppCompatActivity {
 
         FeedApi feedApi= retrofit.create(FeedApi.class);
 
-        String PostUrl=mIntent.getStringExtra("PostURL");
+        final String PostUrl=mIntent.getStringExtra("PostURL");
         Log.d(TAG, "onCreate: PostUrl:"+PostUrl);
         try{
             String[] splitURL=PostUrl.split(baseURL);
@@ -76,6 +76,16 @@ public class CommentsActivity extends AppCompatActivity {
         }catch (ArrayIndexOutOfBoundsException e){
             Log.e(TAG, "onCreate: ArrayIndexOutOfBoundsException"+ e.getMessage() );
         }
+
+        mImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent mIntent=new Intent(CommentsActivity.this, WebViewActivity.class);
+                mIntent.putExtra("url",PostUrl);
+                startActivity(mIntent);
+            }
+        });
+
 
         Call<Feed> call=feedApi.getComments(currentFeed);
 
